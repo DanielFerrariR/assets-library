@@ -1,17 +1,35 @@
+import { getLayoutAssets } from "@/api/assets";
 import AssetCard from "@/components/AssetCard";
 import Header from "@/components/Header";
-import { layoutData } from "@/data/layoutData";
+import { Suspense } from "react";
+import SpinnerIcon from "@/assets/icons/spinner.svg";
 
-export default function LayoutsPage() {
+async function Layout() {
+  const layoutData = await getLayoutAssets();
+
+  return (
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+      {layoutData.map((asset) => (
+        <AssetCard key={asset.id} asset={asset} />
+      ))}
+    </div>
+  );
+}
+
+export default async function LayoutPage() {
   return (
     <div className="flex w-full max-w-screen-md flex-col">
       <Header />
       <div className="h-10" />
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
-        {layoutData.data.map((asset) => (
-          <AssetCard key={asset.id} asset={asset} />
-        ))}
-      </div>
+      <Suspense
+        fallback={
+          <div className="flex w-full justify-center">
+            <SpinnerIcon className="w-12 h-12 animate-spin" />
+          </div>
+        }
+      >
+        <Layout />
+      </Suspense>
     </div>
   );
 }

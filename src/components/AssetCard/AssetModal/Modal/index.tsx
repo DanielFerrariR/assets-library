@@ -35,18 +35,16 @@ export default function Modal({
 
   // Prevent focus and scroll behind the modal
   useEffect(() => {
-    const appElement = document.getElementById("app");
+    const appElement = document.getElementById("root")!;
     const bodyElement = document.body;
 
-    if (appElement && bodyElement) {
-      appElement.setAttribute("inert", "true");
-      bodyElement.style.overflow = "hidden";
+    appElement.setAttribute("inert", "true");
+    bodyElement.style.overflow = "hidden";
 
-      return () => {
-        appElement.removeAttribute("inert");
-        bodyElement.style.overflow = "";
-      };
-    }
+    return () => {
+      appElement.removeAttribute("inert");
+      bodyElement.style.overflow = "";
+    };
   }, []);
 
   return ReactDOM.createPortal(
@@ -81,6 +79,6 @@ export default function Modal({
         </div>
       )}
     </div>,
-    document.getElementById("modal")!
+    document.getElementById("modal-root")!
   );
 }

@@ -1,10 +1,22 @@
 import AssetCard from "@/components/AssetCard";
-import { searchData } from "@/data/searchData";
+import { getFilteredAssets } from "@/api/assets";
 import { Suspense } from "react";
-import SpinnerIcon from "@/assets/icons/spinner.svg";
 import SearchInput from "@/components/Header/SeachInput";
+import SpinnerIcon from "@/assets/icons/spinner.svg";
 
-export default function SearchPage() {
+async function Search() {
+  const searchData = await getFilteredAssets();
+
+  return (
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+      {searchData.data.map((asset) => (
+        <AssetCard key={asset.id} asset={asset} />
+      ))}
+    </div>
+  );
+}
+
+export default async function SearchPage() {
   return (
     <div className="flex w-full max-w-screen-md flex-col">
       <div className="flex flex-col items-center w-full">
@@ -21,11 +33,15 @@ export default function SearchPage() {
         </Suspense>
       </div>
       <div className="h-10" />
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
-        {searchData.data.map((asset) => (
-          <AssetCard key={asset.id} asset={asset} />
-        ))}
-      </div>
+      <Suspense
+        fallback={
+          <div className="flex w-full justify-center">
+            <SpinnerIcon className="w-12 h-12 animate-spin" />
+          </div>
+        }
+      >
+        <Search />
+      </Suspense>
     </div>
   );
 }

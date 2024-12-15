@@ -7,7 +7,7 @@ export enum AssetType {
 }
 
 export interface Asset {
-  id: number;
+  id: string;
   name: string;
   description: string;
   image: string | StaticImport;

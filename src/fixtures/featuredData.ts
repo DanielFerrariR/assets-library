@@ -1,7 +1,9 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const featuredData = {
   featured: [
     {
-      id: 1,
+      id: uuidv4(),
       name: "Featured 1",
       caption: "Short description of the item goes nicely here.",
       description: "Short description of the item goes nicely here.",
@@ -10,25 +12,25 @@ export const featuredData = {
       copyLink: "https://www.google.com",
     },
     {
-      id: 2,
+      id: uuidv4(),
       name: "Featured 2",
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",
       date: "06/27/2024",
-      type: "kpi",
+      type: "layout",
       copyLink: "https://www.google.com",
     },
     {
-      id: 3,
+      id: uuidv4(),
       name: "Featured 3",
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",
       date: "06/27/2024",
-      type: "kpi",
+      type: "storyboard",
       copyLink: "https://www.google.com",
     },
     {
-      id: 4,
+      id: uuidv4(),
       name: "Featured 4",
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",
@@ -39,7 +41,7 @@ export const featuredData = {
   ],
   trending: [
     {
-      id: 1,
+      id: uuidv4(),
       name: "Trending 1",
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",
@@ -48,25 +50,25 @@ export const featuredData = {
       copyLink: "https://www.google.com",
     },
     {
-      id: 2,
+      id: uuidv4(),
       name: "Trending 2",
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",
       date: "06/27/2024",
-      type: "kpi",
+      type: "layout",
       copyLink: "https://www.google.com",
     },
     {
-      id: 3,
+      id: uuidv4(),
       name: "Trending 3",
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",
       date: "06/27/2024",
-      type: "kpi",
+      type: "storyboard",
       copyLink: "https://www.google.com",
     },
     {
-      id: 4,
+      id: uuidv4(),
       name: "Trending 4",
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",

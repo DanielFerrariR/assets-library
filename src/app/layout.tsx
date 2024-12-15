@@ -14,10 +14,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-50">
-        <div id="app" className="flex w-full justify-center p-4">
+        <div id="root" className="flex w-full justify-center p-4">
           {children}
         </div>
-        <div id="modal" />
+        <div id="modal-root" />
       </body>
     </html>
   );
