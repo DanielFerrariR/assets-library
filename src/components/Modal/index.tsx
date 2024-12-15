@@ -60,7 +60,7 @@ export default function Modal({
       }}
     >
       {isOpen && (
-        <div className="relative p-4">
+        <div className="relative">
           <div>{children}</div>
           <div className="absolute top-4 right-4 flex gap-2">
             <button

@@ -1,12 +1,9 @@
 "use client";
-import Modal from "@/components/AssetCard/Modal";
-import { Asset, AssetType } from "@/types/Asset";
+import AssetModal from "@/components/AssetCard/AssetModal";
+import { Asset } from "@/types/Asset";
 import classNames from "classnames";
 import Image from "next/image";
 import { useState } from "react";
-import KpiModalContent from "./KpiModalContent";
-import LayoutModalContent from "./LayoutModalContent";
-import StoryboardModalContent from "./StoryboardModalContent";
 
 interface AssetCardProps {
   asset: Asset;
@@ -14,16 +11,18 @@ interface AssetCardProps {
 }
 
 export default function AssetCard({ asset, isFeatured }: AssetCardProps) {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <button
         className={classNames(
-          isFeatured && "bg-white border-solid border border-gray-200",
-          "flex p-4 hover:bg-neutral-100 rounded"
+          isFeatured
+            ? "bg-white border-solid border border-gray-200 hover:bg-neutral-100 rounded"
+            : "hover:bg-neutral-200",
+          "flex p-4 rounded"
         )}
-        onClick={() => setOpen(true)}
+        onClick={() => setIsOpen(true)}
       >
         <Image
           className="shrink-0 rounded-lg"
@@ -51,16 +50,12 @@ export default function AssetCard({ asset, isFeatured }: AssetCardProps) {
           )}
         </div>
       </button>
-      {open && (
-        <Modal
-          isOpen={open}
-          onClose={() => setOpen(false)}
-          copyLink={asset.copyLink}
-        >
-          {asset.type === AssetType.KPI && <KpiModalContent />}
-          {asset.type === AssetType.LAYOUT && <LayoutModalContent />}
-          {asset.type === AssetType.STORYBOARD && <StoryboardModalContent />}
-        </Modal>
+      {isOpen && (
+        <AssetModal
+          asset={asset}
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+        />
       )}
     </>
   );

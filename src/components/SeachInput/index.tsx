@@ -2,7 +2,7 @@
 import SearchIcon from "@/assets/icons/search.svg";
 import CloseIcon from "@/assets/icons/close.svg";
 import debounce from "lodash/debounce";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function SearchInput() {
@@ -11,9 +11,16 @@ export default function SearchInput() {
   const router = useRouter();
   const [value, setValue] = useState(assetName || "");
 
-  const submitSearch = debounce((searchValue: string) => {
-    router.push(`/search?assetName=${searchValue}`);
-  }, 500);
+  const submitSearch = useCallback(
+    debounce((searchValue: string) => {
+      if (searchValue === "") {
+        router.push("/");
+        return;
+      }
+      router.push(`/search?assetName=${searchValue}`);
+    }, 500) as any,
+    []
+  );
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);

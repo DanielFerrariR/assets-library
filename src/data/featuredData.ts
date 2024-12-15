@@ -3,6 +3,7 @@ export const featuredData = {
     {
       id: 1,
       name: "Featured 1",
+      caption: "Short description of the item goes nicely here.",
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",
       type: "kpi",

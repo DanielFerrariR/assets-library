@@ -6,7 +6,7 @@ export const searchData = {
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",
       date: "06/27/2024",
-      type: "layout",
+      type: "kpi",
       copyLink: "https://www.google.com",
     },
     {
@@ -24,7 +24,7 @@ export const searchData = {
       description: "Short description of the item goes nicely here.",
       image: "https://via.placeholder.com/104",
       date: "06/27/2024",
-      type: "layout",
+      type: "storyboard",
       copyLink: "https://www.google.com",
     },
   ],
