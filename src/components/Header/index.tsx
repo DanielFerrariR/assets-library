@@ -1,5 +1,7 @@
 import Tabs, { Tab } from "@/components/Header/Tabs";
 import SearchInput from "@/components/Header/SeachInput";
+import { Suspense } from "react";
+import SpinnerIcon from "@/assets/icons/spinner.svg";
 
 const tabs: Tab[] = [
   {
@@ -29,7 +31,15 @@ export default function Header() {
         Browse for assets needed to report and present analysis
       </p>
       <div className="h-10" />
-      <SearchInput />
+      <Suspense
+        fallback={
+          <div className="flex w-full justify-center">
+            <SpinnerIcon className="w-6 h-6 animate-spin" />
+          </div>
+        }
+      >
+        <SearchInput />
+      </Suspense>
       <div className="h-6" />
       <Tabs tabs={tabs} />
     </div>

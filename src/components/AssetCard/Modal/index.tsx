@@ -20,10 +20,23 @@ export default function Modal({
 }: ModalProps) {
   const isDesktop = useMediaQuery("screen and (min-width: 1200px)");
 
+  // Click outside handler
+  useEffect(() => {
+    const clickOutsideHandler = (event: MouseEvent) => {
+      const bodyElement = document.body;
+      if (bodyElement === event.target) onClose();
+    };
+
+    document.addEventListener("mousedown", clickOutsideHandler);
+    return () => {
+      document.removeEventListener("mousedown", clickOutsideHandler);
+    };
+  }, [onClose]);
+
   // Prevent focus and scroll behind the modal
   useEffect(() => {
     const appElement = document.getElementById("app");
-    const [bodyElement] = document.getElementsByTagName("body");
+    const bodyElement = document.body;
 
     if (appElement && bodyElement) {
       appElement.setAttribute("inert", "true");
@@ -68,6 +81,6 @@ export default function Modal({
         </div>
       )}
     </div>,
-    document.querySelector("#modal")!
+    document.getElementById("modal")!
   );
 }

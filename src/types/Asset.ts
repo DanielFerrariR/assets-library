@@ -13,5 +13,5 @@ export interface Asset {
   image: string | StaticImport;
   date?: string;
   copyLink: string;
-  type: AssetType;
+  type: string;
 }
