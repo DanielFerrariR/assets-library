@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import Search from "@/app/search/Search";
+import SearchResult from "@/app/search/SearchResult";
 import SpinnerIcon from "@/assets/icons/spinner.svg";
 import SearchInput from "@/components/SeachInput";
 
@@ -27,7 +27,7 @@ export default function SearchPage() {
           </div>
         }
       >
-        <Search />
+        <SearchResult />
       </Suspense>
     </div>
   );

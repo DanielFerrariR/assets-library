@@ -4,7 +4,7 @@ import SpinnerIcon from "@/assets/icons/spinner.svg";
 import { getKpiAssets } from "@/api/assets";
 import AssetCard from "@/components/AssetCard";
 
-async function Kpi() {
+async function FetchedData() {
   const kpiData = await getKpiAssets();
 
   return (
@@ -28,7 +28,7 @@ export default async function KpiPage() {
           </div>
         }
       >
-        <Kpi />
+        <FetchedData />
       </Suspense>
     </div>
   );

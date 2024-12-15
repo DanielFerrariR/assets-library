@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import SpinnerIcon from "@/assets/icons/spinner.svg";
 import { Asset } from "@/types/Asset";
 
-export default function Search() {
+export default function SearchResult() {
   const searchParams = useSearchParams();
   const assetName = searchParams.get("assetName");
   const [searchData, setSearchData] = useState<Asset[] | null>(null);
