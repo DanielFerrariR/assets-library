@@ -17,6 +17,7 @@
 - [x] Search Box
 - [x] Clear search
 - [ ] Recent search
+- [x] Tabs
 
 ### Features Page
 

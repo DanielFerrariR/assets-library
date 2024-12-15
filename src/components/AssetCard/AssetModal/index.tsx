@@ -28,7 +28,7 @@ export default function AssetModal({
         <div className="h-4" />
         <div className="flex items-center gap-2">
           <h1 className="font-semibold text-2xl">{asset.name}</h1>
-          <p className="bg-gray-200 px-1 rounded">
+          <p className="bg-gray-200 px-1 py-0.5 rounded">
             {asset.type === AssetType.KPI ? "KPI" : capitalize(asset.type)}
           </p>
         </div>
