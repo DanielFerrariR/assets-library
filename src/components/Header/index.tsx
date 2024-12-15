@@ -1,7 +1,7 @@
 import Tabs, { Tab } from "@/components/Header/Tabs";
-import SearchInput from "@/components/SeachInput";
 import { Suspense } from "react";
 import SpinnerIcon from "@/assets/icons/spinner.svg";
+import SearchInput from "@/components/Header/SeachInput";
 
 const tabs: Tab[] = [
   {

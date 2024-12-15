@@ -1,4 +1,4 @@
-import Modal from "@/components/Modal";
+import Modal from "@/components/AssetCard/AssetModal/Modal";
 import { Asset, AssetType } from "@/types/Asset";
 import capitalize from "lodash/capitalize";
 import Image from "next/image";
