@@ -1,10 +1,10 @@
-import { getStoryboardAssets } from "@/api/assets";
-import AssetCard from "@/components/AssetCard";
 import Header from "@/components/Header";
 import { Suspense } from "react";
 import SpinnerIcon from "@/assets/icons/spinner.svg";
+import { getStoryboardAssets } from "@/api/assets";
+import AssetCard from "@/components/AssetCard";
 
-async function Storyboard() {
+async function StoryboardResult() {
   const storyboardData = await getStoryboardAssets();
 
   return (
@@ -28,7 +28,7 @@ export default async function StoryboardPage() {
           </div>
         }
       >
-        <Storyboard />
+        <StoryboardResult />
       </Suspense>
     </div>
   );

@@ -28,8 +28,8 @@ export const getStoryboardAssets = async () => {
   return storyboardData;
 };
 
-export const getFilteredAssets = async () => {
+export const getFilteredAssets = async (assetName: string) => {
   // TODO: Implement API call
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  return searchData;
+  return searchData.data.filter((asset) => asset.name.includes(assetName));
 };

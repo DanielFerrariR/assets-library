@@ -1,8 +1,8 @@
-import { getKpiAssets } from "@/api/assets";
-import AssetCard from "@/components/AssetCard";
 import Header from "@/components/Header";
 import { Suspense } from "react";
 import SpinnerIcon from "@/assets/icons/spinner.svg";
+import { getKpiAssets } from "@/api/assets";
+import AssetCard from "@/components/AssetCard";
 
 async function Kpi() {
   const kpiData = await getKpiAssets();
