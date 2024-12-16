@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import CopyLinkIcon from '@/assets/icons/copy--link.svg';
 import CloseIcon from '@/assets/icons/close.svg';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { useMediaQuery } from 'usehooks-ts';
 
 interface ModalProps {
   children: React.ReactNode;
