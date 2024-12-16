@@ -1,24 +1,24 @@
-import Tabs, { Tab } from "@/components/Header/Tabs";
-import { Suspense } from "react";
-import SpinnerIcon from "@/assets/icons/spinner.svg";
-import SearchInput from "@/components/SeachInput";
+import Tabs, { Tab } from '@/components/Header/Tabs';
+import { Suspense } from 'react';
+import SpinnerIcon from '@/assets/icons/spinner.svg';
+import SearchInput from '@/components/SeachInput';
 
 const tabs: Tab[] = [
   {
-    label: "Featured",
-    url: "/",
+    label: 'Featured',
+    url: '/',
   },
   {
-    label: "Kpi",
-    url: "/kpi",
+    label: 'Kpi',
+    url: '/kpi',
   },
   {
-    label: "Layouts",
-    url: "/layouts",
+    label: 'Layouts',
+    url: '/layouts',
   },
   {
-    label: "Storyboards",
-    url: "/storyboards",
+    label: 'Storyboards',
+    url: '/storyboards',
   },
 ];
 

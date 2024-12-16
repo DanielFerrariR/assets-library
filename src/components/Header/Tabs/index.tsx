@@ -1,6 +1,6 @@
-"use client";
-import classnames from "classnames";
-import { useRouter, usePathname } from "next/navigation";
+'use client';
+import classnames from 'classnames';
+import { useRouter, usePathname } from 'next/navigation';
 
 export interface Tab {
   label: string;
@@ -21,9 +21,9 @@ export default function Tabs({ tabs }: TabsProps) {
         <button
           className={classnames(
             pathname === tab.url
-              ? "bg-white"
-              : " text-gray-500 hover:text-gray-400",
-            "font-semibold rounded py-1 w-full text-center cursor-pointer min-w-32"
+              ? 'bg-white'
+              : ' text-gray-500 hover:text-gray-400',
+            'font-semibold rounded py-1 w-full text-center cursor-pointer min-w-32',
           )}
           key={tab.label}
           onClick={() => router.push(`${tab.url}`)}

@@ -1,9 +1,9 @@
-"use client";
-import { useEffect } from "react";
-import ReactDOM from "react-dom";
-import CopyLinkIcon from "@/assets/icons/copy--link.svg";
-import CloseIcon from "@/assets/icons/close.svg";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+'use client';
+import { useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import CopyLinkIcon from '@/assets/icons/copy--link.svg';
+import CloseIcon from '@/assets/icons/close.svg';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 interface ModalProps {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export default function Modal({
   onClose,
   copyLink,
 }: ModalProps) {
-  const isDesktop = useMediaQuery("screen and (min-width: 1200px)");
+  const isDesktop = useMediaQuery('screen and (min-width: 1200px)');
 
   // Click outside handler
   useEffect(() => {
@@ -27,23 +27,23 @@ export default function Modal({
       if (bodyElement === event.target) onClose();
     };
 
-    document.addEventListener("mousedown", clickOutsideHandler);
+    document.addEventListener('mousedown', clickOutsideHandler);
     return () => {
-      document.removeEventListener("mousedown", clickOutsideHandler);
+      document.removeEventListener('mousedown', clickOutsideHandler);
     };
   }, [onClose]);
 
   // Prevent focus and scroll behind the modal
   useEffect(() => {
-    const appElement = document.getElementById("root")!;
+    const appElement = document.getElementById('root')!;
     const bodyElement = document.body;
 
-    appElement.setAttribute("inert", "true");
-    bodyElement.style.overflow = "hidden";
+    appElement.setAttribute('inert', 'true');
+    bodyElement.style.overflow = 'hidden';
 
     return () => {
-      appElement.removeAttribute("inert");
-      bodyElement.style.overflow = "";
+      appElement.removeAttribute('inert');
+      bodyElement.style.overflow = '';
     };
   }, []);
 
@@ -51,10 +51,10 @@ export default function Modal({
     <div
       className="fixed top-0 md:max-w-screen-md rounded m-4 bg-white"
       style={{
-        height: "calc(100dvh - 32px)",
-        width: "calc(100% - 32px)",
-        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-        right: isDesktop ? "33%" : undefined,
+        height: 'calc(100dvh - 32px)',
+        width: 'calc(100% - 32px)',
+        boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
+        right: isDesktop ? '33%' : undefined,
       }}
     >
       {isOpen && (
@@ -79,6 +79,6 @@ export default function Modal({
         </div>
       )}
     </div>,
-    document.getElementById("modal-root")!
+    document.getElementById('modal-root')!,
   );
 }

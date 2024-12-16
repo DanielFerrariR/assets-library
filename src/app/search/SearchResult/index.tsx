@@ -1,21 +1,21 @@
-"use client";
-import AssetCard from "@/components/AssetCard";
-import { getFilteredAssets } from "@/api/assets";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import SpinnerIcon from "@/assets/icons/spinner.svg";
-import { Asset } from "@/types/Asset";
+'use client';
+import AssetCard from '@/components/AssetCard';
+import { getFilteredAssets } from '@/lib/assets';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import SpinnerIcon from '@/assets/icons/spinner.svg';
+import { Asset } from '@/types/Asset';
 
 export default function SearchResult() {
   const searchParams = useSearchParams();
-  const assetName = searchParams.get("assetName");
+  const assetName = searchParams.get('assetName');
   const [searchData, setSearchData] = useState<Asset[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchSearchData() {
       setIsLoading(true);
-      const data = await getFilteredAssets(assetName || "");
+      const data = await getFilteredAssets(assetName || '');
       setSearchData(data);
       setIsLoading(false);
     }

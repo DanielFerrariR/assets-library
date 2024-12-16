@@ -1,7 +1,7 @@
-import Modal from "@/components/AssetCard/AssetModal/Modal";
-import { Asset, AssetType } from "@/types/Asset";
-import capitalize from "lodash/capitalize";
-import Image from "next/image";
+import Modal from '@/components/AssetCard/AssetModal/Modal';
+import { Asset, AssetType } from '@/types/Asset';
+import capitalize from 'lodash/capitalize';
+import Image from 'next/image';
 
 interface AssetModalProps {
   asset: Asset;
@@ -29,7 +29,7 @@ export default function AssetModal({
         <div className="flex items-center gap-2">
           <h1 className="font-semibold text-2xl">{asset.name}</h1>
           <p className="bg-gray-200 px-1 py-0.5 rounded">
-            {asset.type === AssetType.KPI ? "KPI" : capitalize(asset.type)}
+            {asset.type === AssetType.KPI ? 'KPI' : capitalize(asset.type)}
           </p>
         </div>
         <div className="h-4" />

@@ -1,7 +1,7 @@
-import { Suspense } from "react";
-import SearchResult from "@/app/search/SearchResult";
-import SpinnerIcon from "@/assets/icons/spinner.svg";
-import SearchInput from "@/components/SeachInput";
+import { Suspense } from 'react';
+import SearchResult from '@/app/search/SearchResult';
+import SpinnerIcon from '@/assets/icons/spinner.svg';
+import SearchInput from '@/components/SeachInput';
 
 export default function SearchPage() {
   return (

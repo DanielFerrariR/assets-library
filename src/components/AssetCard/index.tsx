@@ -1,9 +1,9 @@
-"use client";
-import AssetModal from "@/components/AssetCard/AssetModal";
-import { Asset } from "@/types/Asset";
-import classNames from "classnames";
-import Image from "next/image";
-import { useState } from "react";
+'use client';
+import AssetModal from '@/components/AssetCard/AssetModal';
+import { Asset } from '@/types/Asset';
+import classNames from 'classnames';
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface AssetCardProps {
   asset: Asset;
@@ -18,9 +18,9 @@ export default function AssetCard({ asset, isFeatured }: AssetCardProps) {
       <button
         className={classNames(
           isFeatured
-            ? "bg-white border-solid border border-gray-200 hover:bg-neutral-100 rounded"
-            : "hover:bg-neutral-200",
-          "flex p-4 rounded"
+            ? 'bg-white border-solid border border-gray-200 hover:bg-neutral-100 rounded'
+            : 'hover:bg-neutral-200',
+          'flex p-4 rounded',
         )}
         onClick={() => setIsOpen(true)}
       >
@@ -35,8 +35,8 @@ export default function AssetCard({ asset, isFeatured }: AssetCardProps) {
         <div className="w-6 shrink-0" />
         <div
           className={classNames(
-            "flex flex-col overflow-hidden",
-            !asset.date && "justify-center"
+            'flex flex-col overflow-hidden',
+            !asset.date && 'justify-center',
           )}
         >
           <p className="font-semibold line-clamp-1 text-start">{asset.name}</p>

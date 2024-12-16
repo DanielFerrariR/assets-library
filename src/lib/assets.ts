@@ -1,8 +1,8 @@
-import { featuredData } from "@/fixtures/featuredData";
-import { kpiData } from "@/fixtures/kpiData";
-import { layoutData } from "@/fixtures/layoutData";
-import { searchData } from "@/fixtures/searchData";
-import { storyboardData } from "@/fixtures/storyboardData";
+import { featuredData } from '@/fixtures/featuredData';
+import { kpiData } from '@/fixtures/kpiData';
+import { layoutData } from '@/fixtures/layoutData';
+import { searchData } from '@/fixtures/searchData';
+import { storyboardData } from '@/fixtures/storyboardData';
 
 export const getFeaturedAssets = async () => {
   // TODO: Implement API call
@@ -31,5 +31,7 @@ export const getStoryboardAssets = async () => {
 export const getFilteredAssets = async (assetName: string) => {
   // TODO: Implement API call
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  return searchData.data.filter((asset) => asset.name.includes(assetName));
+  return searchData.data.filter((asset) =>
+    asset.name.toLowerCase().includes(assetName.toLowerCase())
+  );
 };

@@ -1,5 +1,5 @@
-"use client";
-import { useRouter } from "next/navigation";
+'use client';
+import { useRouter } from 'next/navigation';
 
 export default function NotFound() {
   const router = useRouter();
@@ -14,7 +14,7 @@ export default function NotFound() {
       <div className="h-4" />
       <button
         className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-400"
-        onClick={() => router.push("/")}
+        onClick={() => router.push('/')}
       >
         Return
       </button>

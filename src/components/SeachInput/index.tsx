@@ -1,26 +1,26 @@
-"use client";
-import SearchIcon from "@/assets/icons/search.svg";
-import CloseIcon from "@/assets/icons/close.svg";
-import debounce from "lodash/debounce";
-import { useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+'use client';
+import SearchIcon from '@/assets/icons/search.svg';
+import CloseIcon from '@/assets/icons/close.svg';
+import debounce from 'lodash/debounce';
+import { useMemo, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function SearchInput() {
   const searchParams = useSearchParams();
-  const assetName = searchParams.get("assetName");
+  const assetName = searchParams.get('assetName');
   const router = useRouter();
-  const [value, setValue] = useState(assetName || "");
+  const [value, setValue] = useState(assetName || '');
 
   const submitSearch = useMemo(
     () =>
       debounce((searchValue: string) => {
-        if (searchValue === "") {
-          router.push("/");
+        if (searchValue === '') {
+          router.push('/');
           return;
         }
         router.push(`/search?assetName=${searchValue}`);
       }, 500),
-    [router]
+    [router],
   );
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,8 +29,8 @@ export default function SearchInput() {
   };
 
   const cleanSearch = () => {
-    setValue("");
-    router.push("/");
+    setValue('');
+    router.push('/');
   };
 
   return (

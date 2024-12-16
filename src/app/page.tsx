@@ -1,8 +1,8 @@
-import { getFeaturedAssets } from "@/api/assets";
-import AssetCard from "@/components/AssetCard";
-import Header from "@/components/Header";
-import { Suspense } from "react";
-import SpinnerIcon from "@/assets/icons/spinner.svg";
+import { getFeaturedAssets } from '@/lib/assets';
+import AssetCard from '@/components/AssetCard';
+import Header from '@/components/Header';
+import { Suspense } from 'react';
+import SpinnerIcon from '@/assets/icons/spinner.svg';
 
 async function FetchedData() {
   const featuredData = await getFeaturedAssets();

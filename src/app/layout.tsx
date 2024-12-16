@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: "Assets Library",
-  description: "A simple assets library",
+  title: 'Assets Library',
+  description: 'A simple assets library',
 };
 
 export default function RootLayout({
