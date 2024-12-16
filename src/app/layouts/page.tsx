@@ -4,7 +4,7 @@ import SpinnerIcon from '@/assets/icons/spinner.svg';
 import { getLayoutAssets } from '@/lib/assets';
 import AssetCard from '@/components/AssetCard';
 
-async function FetchedData() {
+async function LayoutList() {
   const layoutData = await getLayoutAssets();
 
   return (
@@ -28,7 +28,7 @@ export default async function LayoutPage() {
           </div>
         }
       >
-        <FetchedData />
+        <LayoutList />
       </Suspense>
     </div>
   );

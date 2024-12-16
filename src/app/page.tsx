@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import { Suspense } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
 
-async function FetchedData() {
+async function FeaturedList() {
   const featuredData = await getFeaturedAssets();
 
   return (
@@ -44,7 +44,7 @@ export default async function FeaturedPage() {
           </div>
         }
       >
-        <FetchedData />
+        <FeaturedList />
       </Suspense>
     </div>
   );

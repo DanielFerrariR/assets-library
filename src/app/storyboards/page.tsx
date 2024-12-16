@@ -4,7 +4,7 @@ import SpinnerIcon from '@/assets/icons/spinner.svg';
 import { getStoryboardAssets } from '@/lib/assets';
 import AssetCard from '@/components/AssetCard';
 
-async function FetchedData() {
+async function StoryboardList() {
   const storyboardData = await getStoryboardAssets();
 
   return (
@@ -28,7 +28,7 @@ export default async function StoryboardPage() {
           </div>
         }
       >
-        <FetchedData />
+        <StoryboardList />
       </Suspense>
     </div>
   );
