@@ -1,5 +1,3 @@
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-
 export enum AssetType {
   KPI = 'kpi',
   LAYOUT = 'layout',
@@ -10,7 +8,7 @@ export interface Asset {
   id: string;
   name: string;
   description: string;
-  image: string | StaticImport;
+  image: string;
   date?: string;
   copyLink: string;
   type: string;

@@ -20,7 +20,7 @@ export default function AssetCard({ asset, isFeatured }: AssetCardProps) {
           isFeatured
             ? 'bg-white border-solid border border-gray-200 hover:bg-neutral-100 rounded'
             : 'hover:bg-neutral-200',
-          'flex p-4 rounded',
+          'flex p-4 rounded'
         )}
         onClick={() => setIsOpen(true)}
       >
@@ -36,7 +36,7 @@ export default function AssetCard({ asset, isFeatured }: AssetCardProps) {
         <div
           className={classNames(
             'flex flex-col overflow-hidden',
-            !asset.date && 'justify-center',
+            !asset.date && 'justify-center'
           )}
         >
           <p className="font-semibold line-clamp-1 text-start">{asset.name}</p>
