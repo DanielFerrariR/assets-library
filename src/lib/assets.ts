@@ -32,6 +32,6 @@ export const getFilteredAssets = async (assetName: string) => {
   // TODO: Implement API call
   await new Promise((resolve) => setTimeout(resolve, 1000));
   return searchData.data.filter((asset) =>
-    asset.name.toLowerCase().includes(assetName.toLowerCase())
+    asset.name.toLowerCase().includes(assetName.toLowerCase()),
   );
 };

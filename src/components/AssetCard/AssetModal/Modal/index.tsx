@@ -49,7 +49,7 @@ export default function Modal({
 
   return ReactDOM.createPortal(
     <div
-      className="fixed top-0 md:max-w-screen-md rounded m-4 bg-white"
+      className="fixed top-0 m-4 rounded bg-white md:max-w-screen-md"
       style={{
         height: 'calc(100dvh - 32px)',
         width: 'calc(100% - 32px)',
@@ -60,20 +60,20 @@ export default function Modal({
       {isOpen && (
         <div className="relative">
           <div>{children}</div>
-          <div className="absolute top-4 right-4 flex gap-2">
+          <div className="absolute right-4 top-4 flex gap-2">
             <button
               className="hover:hover:fill-gray-500"
               onClick={() => navigator.clipboard.writeText(copyLink)}
               aria-label="Copy Link"
             >
-              <CopyLinkIcon className="w-6 h-6" />
+              <CopyLinkIcon className="h-6 w-6" />
             </button>
             <button
               className="hover:hover:fill-gray-500"
               onClick={onClose}
               aria-label="Close Modal"
             >
-              <CloseIcon className="w-6 h-6" />
+              <CloseIcon className="h-6 w-6" />
             </button>
           </div>
         </div>

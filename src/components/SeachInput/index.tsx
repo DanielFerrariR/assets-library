@@ -34,10 +34,10 @@ export default function SearchInput() {
   };
 
   return (
-    <div className="flex items-center relative w-full">
-      <SearchIcon className="w-6 h-6 absolute left-4 pointer-events-none" />
+    <div className="relative flex w-full items-center">
+      <SearchIcon className="pointer-events-none absolute left-4 h-6 w-6" />
       <input
-        className="px-12 py-1 border border-solid border-gray-300 rounded-xl w-full h-12 outline-blue-500  placeholder-gray-400"
+        className="h-12 w-full rounded-xl border border-solid border-gray-300 px-12 py-1 placeholder-gray-400 outline-blue-500"
         onChange={handleChange}
         value={value}
         placeholder="Type to search..."
@@ -48,7 +48,7 @@ export default function SearchInput() {
           onClick={cleanSearch}
           aria-label="Clear search"
         >
-          <CloseIcon className="w-6 h-6" />
+          <CloseIcon className="h-6 w-6" />
         </button>
       )}
     </div>

@@ -18,9 +18,9 @@ export default function AssetCard({ asset, isFeatured }: AssetCardProps) {
       <button
         className={classNames(
           isFeatured
-            ? 'bg-white border-solid border border-gray-200 hover:bg-neutral-100 rounded'
+            ? 'rounded border border-solid border-gray-200 bg-white hover:bg-neutral-100'
             : 'hover:bg-neutral-200',
-          'flex p-4 rounded'
+          'flex rounded p-4',
         )}
         onClick={() => setIsOpen(true)}
       >
@@ -36,16 +36,16 @@ export default function AssetCard({ asset, isFeatured }: AssetCardProps) {
         <div
           className={classNames(
             'flex flex-col overflow-hidden',
-            !asset.date && 'justify-center'
+            !asset.date && 'justify-center',
           )}
         >
-          <p className="font-semibold line-clamp-1 text-start">{asset.name}</p>
+          <p className="line-clamp-1 text-start font-semibold">{asset.name}</p>
           <div className="h-1" />
           <p className="line-clamp-2 text-start">{asset.description}</p>
           {asset.date && (
             <>
               <div className="min-h-1 flex-1" />
-              <p className="text-gray-500 text-start">{asset.date}</p>
+              <p className="text-start text-gray-500">{asset.date}</p>
             </>
           )}
         </div>

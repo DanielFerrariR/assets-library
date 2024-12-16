@@ -25,13 +25,13 @@ export default function SearchResult() {
   if (isLoading || !searchData) {
     return (
       <div className="flex w-full justify-center">
-        <SpinnerIcon className="w-12 h-12 animate-spin" />
+        <SpinnerIcon className="h-12 w-12 animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
       {searchData.map((asset) => (
         <AssetCard key={asset.id} asset={asset} />
       ))}

@@ -24,17 +24,17 @@ const tabs: Tab[] = [
 
 export default function Header() {
   return (
-    <div className="flex flex-col items-center w-full">
-      <h1 className="font-black text-5xl">Library</h1>
+    <div className="flex w-full flex-col items-center">
+      <h1 className="text-5xl font-black">Library</h1>
       <div className="h-10" />
-      <p className="text-base text-center">
+      <p className="text-center text-base">
         Browse for assets needed to report and present analysis
       </p>
       <div className="h-10" />
       <Suspense
         fallback={
           <div className="flex w-full justify-center">
-            <SpinnerIcon className="w-6 h-6 animate-spin" />
+            <SpinnerIcon className="h-6 w-6 animate-spin" />
           </div>
         }
       >
