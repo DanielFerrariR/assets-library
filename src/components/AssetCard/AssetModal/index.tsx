@@ -13,7 +13,7 @@ export default function AssetModal({
   isOpen,
   onClose,
   asset,
-}: AssetModalProps) {
+}: Readonly<AssetModalProps>) {
   return (
     <Modal isOpen={isOpen} onClose={onClose} copyLink={asset.copyLink}>
       <div className="flex flex-col items-center p-4 pt-8">

@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description: 'A simple assets library',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
       <body className="bg-gray-50">

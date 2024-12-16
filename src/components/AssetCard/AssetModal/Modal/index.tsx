@@ -17,7 +17,7 @@ export default function Modal({
   isOpen,
   onClose,
   copyLink,
-}: ModalProps) {
+}: Readonly<ModalProps>) {
   const isDesktop = useMediaQuery('screen and (min-width: 1200px)');
 
   // Click outside handler

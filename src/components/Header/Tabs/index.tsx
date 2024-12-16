@@ -11,7 +11,7 @@ interface TabsProps {
   tabs: Tab[];
 }
 
-export default function Tabs({ tabs }: TabsProps) {
+export default function Tabs({ tabs }: Readonly<TabsProps>) {
   const router = useRouter();
   const pathname = usePathname();
 

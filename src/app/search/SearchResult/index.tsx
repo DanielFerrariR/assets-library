@@ -15,7 +15,7 @@ export default function SearchResult() {
   useEffect(() => {
     async function fetchSearchData() {
       setIsLoading(true);
-      const data = await getFilteredAssets(assetName || '');
+      const data = await getFilteredAssets(assetName ?? '');
       setSearchData(data);
       setIsLoading(false);
     }

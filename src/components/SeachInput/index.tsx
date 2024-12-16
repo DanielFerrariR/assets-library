@@ -9,7 +9,7 @@ export default function SearchInput() {
   const searchParams = useSearchParams();
   const assetName = searchParams.get('assetName');
   const router = useRouter();
-  const [value, setValue] = useState(assetName || '');
+  const [value, setValue] = useState(assetName ?? '');
 
   const submitSearch = useMemo(
     () =>

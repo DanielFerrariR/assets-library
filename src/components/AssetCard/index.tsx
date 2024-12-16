@@ -10,7 +10,10 @@ interface AssetCardProps {
   isFeatured?: boolean;
 }
 
-export default function AssetCard({ asset, isFeatured }: AssetCardProps) {
+export default function AssetCard({
+  asset,
+  isFeatured,
+}: Readonly<AssetCardProps>) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
