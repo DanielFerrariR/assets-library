@@ -117,6 +117,15 @@ $ npm run dev
 
 # Build for production
 $ npm run build
+
+# Check for linting errors
+$ npm run lint
+
+# Format all files
+$ npm run format
+
+# Check for formatting errors
+$ npm run check-format
 ```
 
 ## Links
