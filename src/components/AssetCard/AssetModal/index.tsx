@@ -1,5 +1,5 @@
 import Modal from '@/components/AssetCard/AssetModal/Modal';
-import ModalHeader from '@/components/AssetCard/AssetModal/ModalHeader';
+import CopyLinkIcon from '@/assets/icons/copy--link.svg';
 import { AssetType } from '@/constants/assets';
 import { Asset } from '@/types/Asset';
 import capitalize from 'lodash/capitalize';
@@ -18,7 +18,15 @@ export default function AssetModal({
 }: Readonly<AssetModalProps>) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <ModalHeader copyLink={asset.copyLink} onClose={onClose} />
+      <div className="absolute right-12 top-4 flex gap-2">
+        <button
+          className="hover:hover:fill-gray-500"
+          onClick={() => navigator.clipboard.writeText(asset.copyLink)}
+          aria-label="Copy Link"
+        >
+          <CopyLinkIcon className="h-6 w-6" />
+        </button>
+      </div>
       <div className="flex flex-col items-center p-4 pt-8">
         <Image
           className="shrink-0 rounded-lg"
