@@ -1,4 +1,5 @@
 import Modal from '@/components/AssetCard/AssetModal/Modal';
+import ModalHeader from '@/components/AssetCard/AssetModal/ModalHeader';
 import { AssetType } from '@/constants/assets';
 import { Asset } from '@/types/Asset';
 import capitalize from 'lodash/capitalize';
@@ -16,7 +17,8 @@ export default function AssetModal({
   asset,
 }: Readonly<AssetModalProps>) {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} copyLink={asset.copyLink}>
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalHeader copyLink={asset.copyLink} onClose={onClose} />
       <div className="flex flex-col items-center p-4 pt-8">
         <Image
           className="shrink-0 rounded-lg"
