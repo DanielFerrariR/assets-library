@@ -5,15 +5,12 @@ import CloseIcon from '@/assets/icons/close.svg';
 
 interface ModalProps {
   children: React.ReactNode;
-  isOpen: boolean;
   onClose: () => void;
 }
 
-export default function Modal({
-  children,
-  isOpen,
-  onClose,
-}: Readonly<ModalProps>) {
+export default function Modal({ children, onClose }: Readonly<ModalProps>) {
+  const modalRootElement = document.getElementById('modal-root');
+
   // Click outside handler
   useEffect(() => {
     const clickOutsideHandler = (event: MouseEvent) => {
@@ -41,23 +38,23 @@ export default function Modal({
     };
   }, []);
 
+  if (!modalRootElement) return null;
+
   return ReactDOM.createPortal(
     <div className="fixed top-0 m-4 h-[calc(100%-32px)] w-[calc(100%-32px)] rounded bg-white shadow-[0_3px_8px_rgba(0,0,0,0.24)] md:max-w-screen-md [@media(min-width:1200px)]:right-1/3">
-      {isOpen && (
-        <div className="relative">
-          <div className="absolute right-4 top-4 flex gap-2">
-            <button
-              className="hover:hover:fill-gray-500"
-              onClick={onClose}
-              aria-label="Close Modal"
-            >
-              <CloseIcon className="h-6 w-6" />
-            </button>
-          </div>
-          <div>{children}</div>
+      <div className="relative">
+        <div className="absolute right-4 top-4 flex gap-2">
+          <button
+            className="hover:hover:fill-gray-500"
+            onClick={onClose}
+            aria-label="Close Modal"
+          >
+            <CloseIcon className="h-6 w-6" />
+          </button>
         </div>
-      )}
+        <div>{children}</div>
+      </div>
     </div>,
-    document.getElementById('modal-root')!,
+    modalRootElement,
   );
 }

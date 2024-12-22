@@ -53,13 +53,7 @@ export default function AssetCard({
           )}
         </div>
       </button>
-      {isOpen && (
-        <AssetModal
-          asset={asset}
-          isOpen={isOpen}
-          onClose={() => setIsOpen(false)}
-        />
-      )}
+      {isOpen && <AssetModal asset={asset} onClose={() => setIsOpen(false)} />}
     </>
   );
 }

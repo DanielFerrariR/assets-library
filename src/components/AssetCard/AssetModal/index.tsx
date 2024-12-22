@@ -7,17 +7,15 @@ import Image from 'next/image';
 
 interface AssetModalProps {
   asset: Asset;
-  isOpen: boolean;
   onClose: () => void;
 }
 
 export default function AssetModal({
-  isOpen,
   onClose,
   asset,
 }: Readonly<AssetModalProps>) {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal onClose={onClose}>
       <div className="absolute right-12 top-4 flex gap-2">
         <button
           className="hover:hover:fill-gray-500"
