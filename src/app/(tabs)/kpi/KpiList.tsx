@@ -1,5 +1,5 @@
 import AssetCard from '@/components/AssetCard';
-import { getKpiAssets } from '@/lib/assets';
+import { getKpiAssets } from '@/actions/assets';
 
 export async function KpiList() {
   const kpiData = await getKpiAssets();

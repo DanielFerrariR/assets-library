@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
-import { FeaturedList } from '@/app/(featured)/FeaturedList';
+import { FeaturedList } from '@/app/(tabs)/FeaturedList';
 
 export default async function FeaturedPage() {
   return (

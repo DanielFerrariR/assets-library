@@ -1,5 +1,5 @@
 import AssetCard from '@/components/AssetCard';
-import { getFeaturedAssets } from '@/lib/assets';
+import { getFeaturedAssets } from '@/actions/assets';
 
 export async function FeaturedList() {
   const featuredData = await getFeaturedAssets();

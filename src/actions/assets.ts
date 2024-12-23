@@ -1,3 +1,4 @@
+'use server';
 import { featuredData } from '@/fixtures/featuredData';
 import { kpiData } from '@/fixtures/kpiData';
 import { layoutData } from '@/fixtures/layoutData';

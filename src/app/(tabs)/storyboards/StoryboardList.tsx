@@ -1,5 +1,5 @@
 import AssetCard from '@/components/AssetCard';
-import { getStoryboardAssets } from '@/lib/assets';
+import { getStoryboardAssets } from '@/actions/assets';
 
 export async function StoryboardList() {
   const storyboardData = await getStoryboardAssets();
@@ -7,11 +7,7 @@ export async function StoryboardList() {
   return (
     <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
       {storyboardData.map((asset) => (
-        <AssetCard
-          key={asset.id}
-          asset={asset}
-          href={`/storyboards/modal?id=${asset.id}`}
-        />
+        <AssetCard key={asset.id} asset={asset} />
       ))}
     </div>
   );

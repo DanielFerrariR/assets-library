@@ -1,6 +1,6 @@
 'use client';
 import AssetCard from '@/components/AssetCard';
-import { getFilteredAssets } from '@/lib/assets';
+import { getFilteredAssets } from '@/actions/assets';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
