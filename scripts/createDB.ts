@@ -31,6 +31,12 @@ export const assets = [
 
 db.prepare(
   `
+    DROP TABLE IF EXISTS assets
+`,
+).run();
+
+db.prepare(
+  `
    CREATE TABLE IF NOT EXISTS assets (
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        name TEXT NOT NULL,
@@ -45,7 +51,7 @@ db.prepare(
 `,
 ).run();
 
-async function initData() {
+function initData() {
   const statement = db.prepare(`
       INSERT INTO assets VALUES (
          null,

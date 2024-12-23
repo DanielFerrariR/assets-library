@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
 import SearchInput from '@/app/(assets)/_components/SeachInput';
-import AssetModal from '@/app/(assets)/_components/AssetModal';
 import SearchResult from '@/app/(assets)/search/_components/SearchResult';
 
 export default function SearchPage() {
@@ -31,7 +30,6 @@ export default function SearchPage() {
         >
           <SearchResult />
         </Suspense>
-        <AssetModal />
       </div>
     </div>
   );
