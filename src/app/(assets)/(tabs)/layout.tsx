@@ -2,7 +2,6 @@ import Header from '@/app/(assets)/(tabs)/_components/Header';
 
 interface TabsProps {
   children: React.ReactNode;
-  modal: React.ReactNode;
 }
 
 export default function TabsLayout({ children }: Readonly<TabsProps>) {

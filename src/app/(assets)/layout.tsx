@@ -1,4 +1,5 @@
 import AssetModal from '@/app/(assets)/_components/AssetModal';
+import { Suspense } from 'react';
 
 interface AssetsLayoutProps {
   children: React.ReactNode;
@@ -10,7 +11,9 @@ export default function AssetsLayout({
   return (
     <>
       {children}
-      <AssetModal />
+      <Suspense fallback={null}>
+        <AssetModal />
+      </Suspense>
     </>
   );
 }

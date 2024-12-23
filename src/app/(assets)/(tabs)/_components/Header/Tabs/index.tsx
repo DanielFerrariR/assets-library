@@ -22,7 +22,7 @@ export default function Tabs({ tabs }: Readonly<TabsProps>) {
           className={classnames(
             pathname === tab.url
               ? 'bg-white'
-              : 'text-gray-500 hover:text-gray-400',
+              : 'text-gray-600 hover:text-gray-500',
             'w-full min-w-32 cursor-pointer rounded py-1 text-center font-semibold',
           )}
           key={tab.label}
