@@ -8,6 +8,7 @@ import { getAssetById } from '@/actions/assets';
 import { Asset } from '@/types/Asset';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import SpinnerIcon from '@/assets/icons/spinner.svg';
 
 export default function AssetModal() {
   const searchParams = useSearchParams();
@@ -27,36 +28,44 @@ export default function AssetModal() {
     getAsset();
   }, [id]);
 
-  if (!asset || !id) return null;
+  if (!id) return null;
 
   return (
     <Modal onClose={route.back}>
-      <button
-        className="absolute right-12 top-4 hover:hover:fill-gray-500"
-        onClick={() => navigator.clipboard.writeText(asset.copy_link)}
-        aria-label="Copy Link"
-      >
-        <CopyLinkIcon className="h-6 w-6" />
-      </button>
-      <div className="flex flex-col items-center p-4 pt-8">
-        <Image
-          className="shrink-0 rounded-lg"
-          src={asset.image}
-          width={52}
-          height={52}
-          alt={asset.name}
-          priority
-        />
-        <div className="h-4" />
-        <div className="flex items-center gap-2">
-          <h1 className="text-2xl font-semibold">{asset.name}</h1>
-          <p className="rounded bg-gray-200 px-1 py-0.5">
-            {asset.type === AssetType.KPI ? 'KPI' : capitalize(asset.type)}
-          </p>
+      {asset ? (
+        <>
+          <button
+            className="absolute right-12 top-4 hover:hover:fill-gray-500"
+            onClick={() => navigator.clipboard.writeText(asset.copy_link)}
+            aria-label="Copy Link"
+          >
+            <CopyLinkIcon className="h-6 w-6" />
+          </button>
+          <div className="flex flex-col items-center p-4 pt-8">
+            <Image
+              className="shrink-0 rounded-lg"
+              src={asset.image}
+              width={52}
+              height={52}
+              alt={asset.name}
+              priority
+            />
+            <div className="h-4" />
+            <div className="flex items-center gap-2">
+              <h1 className="text-2xl font-semibold">{asset.name}</h1>
+              <p className="rounded bg-gray-200 px-1 py-0.5">
+                {asset.type === AssetType.KPI ? 'KPI' : capitalize(asset.type)}
+              </p>
+            </div>
+            <div className="h-4" />
+            <p className="text-center">{asset.description}</p>
+          </div>
+        </>
+      ) : (
+        <div className="flex h-full w-full items-center justify-center">
+          <SpinnerIcon className="h-12 w-12 animate-spin" />
         </div>
-        <div className="h-4" />
-        <p className="text-center">{asset.description}</p>
-      </div>
+      )}
     </Modal>
   );
 }

@@ -53,7 +53,7 @@ export default function Modal({ children, onClose }: Readonly<ModalProps>) {
       >
         <CloseIcon className="h-6 w-6" />
       </button>
-      <div>{children}</div>
+      {children}
     </div>,
     modalRootElement,
   );
