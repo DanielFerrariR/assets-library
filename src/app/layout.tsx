@@ -13,7 +13,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
-      <body className="bg-gray-50">
+      <body className="min-h-dvh bg-gray-50">
         <div id="root">{children}</div>
         <div id="modal-root" />
       </body>

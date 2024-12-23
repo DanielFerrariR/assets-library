@@ -30,11 +30,15 @@ export default function Modal({ children, onClose }: Readonly<ModalProps>) {
     const bodyElement = document.body;
 
     appElement.setAttribute('inert', 'true');
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
     bodyElement.style.overflow = 'hidden';
+    bodyElement.style.paddingRight = `${scrollbarWidth}px`;
 
     return () => {
       appElement.removeAttribute('inert');
       bodyElement.style.overflow = '';
+      bodyElement.style.paddingRight = '';
     };
   }, []);
 

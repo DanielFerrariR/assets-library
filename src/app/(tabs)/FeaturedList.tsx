@@ -1,8 +1,11 @@
 import AssetCard from '@/components/AssetCard';
-import { getFeaturedAssets } from '@/actions/assets';
+import { getFeaturedAssets, getTrendingAssets } from '@/actions/assets';
 
 export async function FeaturedList() {
-  const featuredData = await getFeaturedAssets();
+  const [featuredData, trendingData] = await Promise.all([
+    getFeaturedAssets(),
+    getTrendingAssets(),
+  ]);
 
   return (
     <div>
@@ -11,8 +14,13 @@ export async function FeaturedList() {
         <p className="text-gray-500">Curated top picks from this week</p>
         <div className="h-8" />
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-          {featuredData.featured.map((asset) => (
-            <AssetCard isFeatured key={asset.id} asset={asset} />
+          {featuredData.map((asset) => (
+            <AssetCard
+              isFeatured
+              key={asset.id}
+              asset={asset}
+              href={`/?id=${asset.id}`}
+            />
           ))}
         </div>
       </div>
@@ -21,8 +29,8 @@ export async function FeaturedList() {
       <p className="text-gray-500">Most popular by community</p>
       <div className="h-8" />
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-        {featuredData.trending.map((asset) => (
-          <AssetCard key={asset.id} asset={asset} />
+        {trendingData.map((asset) => (
+          <AssetCard key={asset.id} asset={asset} href={`/?id=${asset.id}`} />
         ))}
       </div>
     </div>

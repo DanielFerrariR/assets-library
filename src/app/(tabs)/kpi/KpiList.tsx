@@ -7,7 +7,7 @@ export async function KpiList() {
   return (
     <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
       {kpiData.map((asset) => (
-        <AssetCard key={asset.id} asset={asset} />
+        <AssetCard key={asset.id} asset={asset} href={`/kpi?id=${asset.id}`} />
       ))}
     </div>
   );

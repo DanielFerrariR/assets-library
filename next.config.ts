@@ -37,7 +37,6 @@ const nextConfig: NextConfig = {
 
     return config;
   },
-
   experimental: {
     turbo: {
       rules: {

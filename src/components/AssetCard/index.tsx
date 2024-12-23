@@ -1,23 +1,21 @@
-'use client';
-import AssetModal from '@/components/AssetCard/AssetModal';
 import { Asset } from '@/types/Asset';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useState } from 'react';
+import Link from 'next/link';
 
 interface AssetCardProps {
   asset: Asset;
   isFeatured?: boolean;
+  href: string;
 }
 
 export default function AssetCard({
   asset,
   isFeatured,
+  href,
 }: Readonly<AssetCardProps>) {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <>
+    <Link scroll={false} href={href}>
       <button
         className={classNames(
           isFeatured
@@ -25,7 +23,6 @@ export default function AssetCard({
             : 'hover:bg-neutral-200',
           'flex rounded p-4',
         )}
-        onClick={() => setIsOpen(true)}
       >
         <Image
           className="shrink-0 rounded-lg"
@@ -53,7 +50,6 @@ export default function AssetCard({
           )}
         </div>
       </button>
-      {isOpen && <AssetModal asset={asset} onClose={() => setIsOpen(false)} />}
-    </>
+    </Link>
   );
 }

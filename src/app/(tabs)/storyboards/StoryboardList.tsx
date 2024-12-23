@@ -7,7 +7,11 @@ export async function StoryboardList() {
   return (
     <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
       {storyboardData.map((asset) => (
-        <AssetCard key={asset.id} asset={asset} />
+        <AssetCard
+          key={asset.id}
+          asset={asset}
+          href={`/storyboards?id=${asset.id}`}
+        />
       ))}
     </div>
   );

@@ -33,7 +33,11 @@ export default function SearchResult() {
   return (
     <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
       {searchData.map((asset) => (
-        <AssetCard key={asset.id} asset={asset} />
+        <AssetCard
+          key={asset.id}
+          asset={asset}
+          href={`/search?assetName=${assetName}&id=${asset.id}`}
+        />
       ))}
     </div>
   );

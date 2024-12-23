@@ -4,6 +4,8 @@ export interface Asset {
   description: string;
   image: string;
   date?: string;
-  copyLink: string;
+  copy_link: string;
   type: string;
+  is_trending: boolean;
+  is_featured: boolean;
 }

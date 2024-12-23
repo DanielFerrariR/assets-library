@@ -8,9 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "check-format": "prettier --list-different ."
+    "check-format": "prettier --list-different .",
+    "create-db": "ts-node scripts/createDB.ts"
   },
   "dependencies": {
+    "better-sqlite3": "^11.7.0",
     "lodash": "^4.17.21",
     "next": "15.1.0",
     "react": "^19.0.0",
@@ -20,6 +22,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@svgr/webpack": "^8.1.0",
+    "@types/better-sqlite3": "^7.6.12",
     "@types/lodash": "^4.17.13",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -32,11 +35,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
-  },
-  "overrides": {
-    "usehooks-ts": {
-      "react": "^19.0.0"
-    }
   }
 }

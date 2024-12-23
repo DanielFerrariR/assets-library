@@ -1,24 +1,39 @@
-import Modal from '@/components/AssetCard/AssetModal/Modal';
+'use client';
 import CopyLinkIcon from '@/assets/icons/copy--link.svg';
+import Modal from '@/components/AssetModal/Modal';
 import { AssetType } from '@/constants/assets';
-import { Asset } from '@/types/Asset';
 import capitalize from 'lodash/capitalize';
 import Image from 'next/image';
+import { getAssetById } from '@/actions/assets';
+import { Asset } from '@/types/Asset';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-interface AssetModalProps {
-  asset: Asset;
-  onClose: () => void;
-}
+export default function AssetModal() {
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id');
+  const route = useRouter();
+  const [asset, setAsset] = useState<Asset>();
 
-export default function AssetModal({
-  onClose,
-  asset,
-}: Readonly<AssetModalProps>) {
+  useEffect(() => {
+    const getAsset = async () => {
+      if (!id) {
+        setAsset(undefined);
+        return;
+      }
+      const response = await getAssetById(id);
+      setAsset(response);
+    };
+    getAsset();
+  }, [id]);
+
+  if (!asset || !id) return null;
+
   return (
-    <Modal onClose={onClose}>
+    <Modal onClose={route.back}>
       <button
         className="absolute right-12 top-4 hover:hover:fill-gray-500"
-        onClick={() => navigator.clipboard.writeText(asset.copyLink)}
+        onClick={() => navigator.clipboard.writeText(asset.copy_link)}
         aria-label="Copy Link"
       >
         <CopyLinkIcon className="h-6 w-6" />

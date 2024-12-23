@@ -1,7 +1,9 @@
+import AssetModal from '@/components/AssetModal';
 import Header from '@/components/Header';
 
 interface TabsProps {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }
 
 export default function TabsLayout({ children }: Readonly<TabsProps>) {
@@ -11,6 +13,7 @@ export default function TabsLayout({ children }: Readonly<TabsProps>) {
         <Header />
         <div className="h-10" />
         {children}
+        <AssetModal />
       </div>
     </div>
   );
