@@ -1,6 +1,5 @@
 'use client';
 import CopyLinkIcon from '@/assets/icons/copy--link.svg';
-import Modal from '@/components/AssetModal/Modal';
 import { AssetType } from '@/constants/assets';
 import capitalize from 'lodash/capitalize';
 import Image from 'next/image';
@@ -9,6 +8,7 @@ import { Asset } from '@/types/Asset';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
+import Modal from '@/app/(assets)/_components/AssetModal/Modal';
 
 export default function AssetModal() {
   const searchParams = useSearchParams();

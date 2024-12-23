@@ -1,5 +1,5 @@
-import AssetModal from '@/components/AssetModal';
-import Header from '@/components/Header';
+import Header from '@/app/(assets)/(tabs)/_components/Header';
+import AssetModal from '@/app/(assets)/_components/AssetModal';
 
 interface TabsProps {
   children: React.ReactNode;

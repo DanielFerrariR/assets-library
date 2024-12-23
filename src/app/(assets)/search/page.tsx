@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
-import SearchResult from '@/app/search/SearchResult';
-import AssetModal from '@/components/AssetModal';
-import SearchInput from '@/components/SeachInput';
+import SearchInput from '@/app/(assets)/_components/SeachInput';
+import AssetModal from '@/app/(assets)/_components/AssetModal';
+import SearchResult from '@/app/(assets)/search/_components/SearchResult';
 
 export default function SearchPage() {
   return (

@@ -1,5 +1,5 @@
-import AssetCard from '@/components/AssetCard';
 import { getLayoutAssets } from '@/actions/assets';
+import AssetCard from '@/app/(assets)/(tabs)/_components/AssetCard';
 
 export async function LayoutList() {
   const layoutData = await getLayoutAssets();

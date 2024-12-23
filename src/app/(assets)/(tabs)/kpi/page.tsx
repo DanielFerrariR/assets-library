@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
-import { KpiList } from '@/app/(tabs)/kpi/KpiList';
+import { KpiList } from '@/app/(assets)/(tabs)/kpi/_components/KpiList';
 
 export default async function KpiPage() {
   return (

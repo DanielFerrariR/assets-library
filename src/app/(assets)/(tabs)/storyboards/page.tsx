@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
-import { StoryboardList } from '@/app/(tabs)/storyboards/StoryboardList';
+import { StoryboardList } from '@/app/(assets)/(tabs)/storyboards/_components/StoryboardList';
 
 export default async function StoryboardPage() {
   return (

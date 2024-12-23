@@ -1,5 +1,5 @@
-import AssetCard from '@/components/AssetCard';
 import { getStoryboardAssets } from '@/actions/assets';
+import AssetCard from '@/app/(assets)/(tabs)/_components/AssetCard';
 
 export async function StoryboardList() {
   const storyboardData = await getStoryboardAssets();

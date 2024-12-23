@@ -1,5 +1,5 @@
-import AssetCard from '@/components/AssetCard';
 import { getFeaturedAssets, getTrendingAssets } from '@/actions/assets';
+import AssetCard from '@/app/(assets)/(tabs)/_components/AssetCard';
 
 export async function FeaturedList() {
   const [featuredData, trendingData] = await Promise.all([

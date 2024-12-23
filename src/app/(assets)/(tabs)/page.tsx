@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
-import { LayoutList } from '@/app/(tabs)/layouts/LayoutList';
+import { FeaturedList } from '@/app/(assets)/(tabs)/_components/FeaturedList';
 
-export default async function LayoutPage() {
+export default async function FeaturedPage() {
   return (
     <Suspense
       fallback={
@@ -11,7 +11,7 @@ export default async function LayoutPage() {
         </div>
       }
     >
-      <LayoutList />
+      <FeaturedList />
     </Suspense>
   );
 }

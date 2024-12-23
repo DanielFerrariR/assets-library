@@ -1,10 +1,10 @@
 'use client';
-import AssetCard from '@/components/AssetCard';
 import { getFilteredAssets } from '@/actions/assets';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import SpinnerIcon from '@/assets/icons/spinner.svg';
 import { Asset } from '@/types/Asset';
+import AssetCard from '@/app/(assets)/(tabs)/_components/AssetCard';
 
 export default function SearchResult() {
   const searchParams = useSearchParams();
