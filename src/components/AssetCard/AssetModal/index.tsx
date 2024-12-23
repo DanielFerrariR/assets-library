@@ -16,15 +16,13 @@ export default function AssetModal({
 }: Readonly<AssetModalProps>) {
   return (
     <Modal onClose={onClose}>
-      <div className="absolute right-12 top-4 flex gap-2">
-        <button
-          className="hover:hover:fill-gray-500"
-          onClick={() => navigator.clipboard.writeText(asset.copyLink)}
-          aria-label="Copy Link"
-        >
-          <CopyLinkIcon className="h-6 w-6" />
-        </button>
-      </div>
+      <button
+        className="absolute right-12 top-4 hover:hover:fill-gray-500"
+        onClick={() => navigator.clipboard.writeText(asset.copyLink)}
+        aria-label="Copy Link"
+      >
+        <CopyLinkIcon className="h-6 w-6" />
+      </button>
       <div className="flex flex-col items-center p-4 pt-8">
         <Image
           className="shrink-0 rounded-lg"
