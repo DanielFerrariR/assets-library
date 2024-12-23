@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import CloseIcon from '@/assets/icons/close.svg';
 
@@ -9,7 +9,13 @@ interface ModalProps {
 }
 
 export default function Modal({ children, onClose }: Readonly<ModalProps>) {
-  const modalRootElement = document.getElementById('modal-root');
+  const [modalRootElement, setModalRootElement] = useState<HTMLElement | null>(
+    null,
+  );
+
+  useEffect(() => {
+    setModalRootElement(document.getElementById('modal-root'));
+  }, []);
 
   // Click outside handler
   useEffect(() => {
