@@ -6,10 +6,12 @@ interface TabsProps {
 
 export default function TabsLayout({ children }: Readonly<TabsProps>) {
   return (
-    <div className="flex w-full max-w-screen-md flex-col">
-      <Header />
-      <div className="h-10" />
-      {children}
+    <div className="flex w-full justify-center p-4">
+      <div className="flex w-full max-w-screen-md flex-col">
+        <Header />
+        <div className="h-10" />
+        {children}
+      </div>
     </div>
   );
 }

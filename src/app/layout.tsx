@@ -14,9 +14,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
       <body className="bg-gray-50">
-        <div id="root" className="flex w-full justify-center p-4">
-          {children}
-        </div>
+        <div id="root">{children}</div>
         <div id="modal-root" />
       </body>
     </html>
